@@ -5,6 +5,7 @@ import dev.lilcode.googlecard.controllers.ClientGoogleChatWebhook;
 import dev.lilcode.googlecard.exception.MessageDeliveryException;
 import dev.lilcode.googlecard.types.TextMessage;
 import dev.lilcode.googlecard.v1.types.Card;
+import dev.lilcode.googlecard.v1.validators.GoogleChatWebhookValidation;
 
 import java.io.IOException;
 
@@ -14,12 +15,14 @@ import java.io.IOException;
 @Deprecated
 public class GoogleChatCardManager {
     private final ClientGoogleChatWebhook client;
+    private final GoogleChatWebhookValidation validator = new GoogleChatWebhookValidation();
 
     public GoogleChatCardManager(ClientGoogleChatWebhook client) {
         this.client = client;
     }
 
     public void send(Card card) {
+        validator.validate(card);
         try {
             var result = client.googleChatWebhook.send(card, client.getSpaceId(), client.getKey(), client.getToken())
                 .execute();

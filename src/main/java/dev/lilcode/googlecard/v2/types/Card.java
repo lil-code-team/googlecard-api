@@ -1,5 +1,6 @@
 package dev.lilcode.googlecard.v2.types;
 
+import dev.lilcode.googlecard.interfaces.annotations.Validate;
 import dev.lilcode.googlecard.interfaces.annotations.WorkspaceExclusive;
 import dev.lilcode.googlecard.v2.types.enums.DisplayStyle;
 import dev.lilcode.googlecard.v2.types.enums.DividerStyle;
@@ -8,10 +9,11 @@ import lombok.Builder;
 
 import java.util.ArrayList;
 
+@Validate
 @Builder
 public record Card(
     CardHeader header,
-    ArrayList<Section> section,
+    ArrayList<Section> sections,
     DividerStyle sectionDividerStyle,
     ArrayList<CardAction> cardAction,
     @WorkspaceExclusive

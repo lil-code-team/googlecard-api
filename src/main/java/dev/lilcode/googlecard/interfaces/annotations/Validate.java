@@ -6,7 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE, ElementType.FIELD})
-@Validate
-public @interface ChatApplicationExclusive {
+@Target({ElementType.FIELD, ElementType.TYPE})
+public @interface Validate {
 }
