@@ -1,6 +1,6 @@
 package dev.lilcode.googlecard.controllers;
 
-import dev.lilcode.googlecard.clients.GoogleChatWebhook;
+import dev.lilcode.googlecard.interfaces.clients.GoogleChatWebhook;
 import dev.lilcode.googlecard.constants.Uri;
 import lombok.Getter;
 

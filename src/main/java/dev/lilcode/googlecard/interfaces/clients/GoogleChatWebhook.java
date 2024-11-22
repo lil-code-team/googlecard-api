@@ -1,8 +1,8 @@
-package dev.lilcode.googlecard.clients;
+package dev.lilcode.googlecard.interfaces.clients;
 
 import dev.lilcode.googlecard.types.TextMessage;
 import dev.lilcode.googlecard.v1.types.Card;
-import dev.lilcode.googlecard.v2.types.CardsV2;
+import dev.lilcode.googlecard.v2.types.RequestCards;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.ResponseBody;
@@ -12,21 +12,19 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.*;
 
-import java.util.ArrayList;
-
 public interface GoogleChatWebhook {
     @POST("/v1/spaces/{spaceId}/messages")
     Call<ResponseBody> send(@Body TextMessage text, @Path("spaceId") String spaceId,  @Query("key") String key, @Query("token") String token);
 
     /**
-     * @deprecated Use {@link #send(ArrayList, String, String)} instead
+     * @deprecated Use {@link #send(RequestCards, String, String, String)}
      */
     @Deprecated
     @POST("/v1/spaces/{spaceId}/messages")
     Call<ResponseBody> send(@Body Card card, @Path("spaceId") String spaceId, @Query("key") String key, @Query("token") String token);
 
     @POST("/v1/spaces/{spaceId}/messages")
-    Call<ResponseBody> send(@Body ArrayList<CardsV2> card, @Path("spaceId") String spaceId, @Query("key") String key, @Query("token") String token);
+    Call<ResponseBody> send(@Body RequestCards card, @Path("spaceId") String spaceId, @Query("key") String key, @Query("token") String token);
 
     static GoogleChatWebhook create(String baseUrl) {
         OkHttpClient client = new OkHttpClient.Builder()

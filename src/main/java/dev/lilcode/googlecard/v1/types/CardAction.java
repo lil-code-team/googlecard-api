@@ -1,6 +1,6 @@
 package dev.lilcode.googlecard.v1.types;
 
-import dev.lilcode.googlecard.interfaces.WorkspaceExclusive;
+import dev.lilcode.googlecard.interfaces.annotations.WorkspaceExclusive;
 import lombok.Builder;
 
 /**

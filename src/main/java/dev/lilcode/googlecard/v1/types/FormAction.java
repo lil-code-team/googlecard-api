@@ -1,6 +1,6 @@
 package dev.lilcode.googlecard.v1.types;
 
-import dev.lilcode.googlecard.interfaces.ChatApplicationExclusive;
+import dev.lilcode.googlecard.interfaces.annotations.ChatApplicationExclusive;
 import dev.lilcode.googlecard.v2.types.Action;
 import lombok.Builder;
 

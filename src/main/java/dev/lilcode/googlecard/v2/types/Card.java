@@ -1,11 +1,10 @@
 package dev.lilcode.googlecard.v2.types;
 
-import dev.lilcode.googlecard.interfaces.WorkspaceExclusive;
+import dev.lilcode.googlecard.interfaces.annotations.WorkspaceExclusive;
 import dev.lilcode.googlecard.v2.types.enums.DisplayStyle;
 import dev.lilcode.googlecard.v2.types.enums.DividerStyle;
 import dev.lilcode.googlecard.v2.types.enums.ImageType;
 import lombok.Builder;
-import lombok.Setter;
 
 import java.util.ArrayList;
 

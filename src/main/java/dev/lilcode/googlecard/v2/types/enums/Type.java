@@ -1,6 +1,6 @@
 package dev.lilcode.googlecard.v2.types.enums;
 
-import dev.lilcode.googlecard.interfaces.ChatExclusive;
+import dev.lilcode.googlecard.interfaces.annotations.ChatExclusive;
 import lombok.AllArgsConstructor;
 
 @ChatExclusive
