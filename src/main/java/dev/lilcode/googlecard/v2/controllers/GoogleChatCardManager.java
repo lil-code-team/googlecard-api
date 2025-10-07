@@ -21,9 +21,11 @@ public class GoogleChatCardManager {
         this.client = client;
     }
 
-    public void addCard(Card card) {
+    public UUID addCard(Card card) {
         validator.validate(card);
-        cards.add(CardsV2.builder().cardId(UUID.randomUUID()).card(card).build());
+        UUID cardId = UUID.randomUUID();
+        cards.add(CardsV2.builder().cardId(cardId).card(card).build());
+        return cardId;
     }
     public void removeCard(UUID cardId) {
         cards.removeIf(c -> c.cardId().equals(cardId));
